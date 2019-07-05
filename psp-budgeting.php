@@ -50,4 +50,12 @@ function psp_budget_localize_init() {
     load_plugin_textdomain( 'psp-projects', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 
+require 'vendor/plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/3pointross/psp-budget-expenses',
+	__FILE__,
+	'psp-budgeting'
+);
+
+
 do_action( 'pspb_after_init' );
