@@ -25,5 +25,8 @@ Track project budget and expenses by category in Project Panorama.
 
 == Changelog ==
 
+= 1.0.2 =
+* Adds the ability to translate $ into different currency symbols
+
 = 1.0 =
 * First release!

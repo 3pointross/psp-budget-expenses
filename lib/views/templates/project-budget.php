@@ -30,8 +30,8 @@ if( current_user_can('read_psp_budgets') ):
                             </form> <!--/.psp-set-budget-form-->
                         <?php endif; ?>
                     </td>
-                    <td class="psp-budget-table-spent">$<?php echo esc_html( number_format(intval($budget['spent']) )); ?></td>
-                    <td class="psp-budget-table-remaining">$<?php echo esc_html( number_format(intval($budget['remaining']) )); ?>
+                    <td class="psp-budget-table-spent"><?php echo esc_html_e( '$', 'psp_projects' ); ?><?php echo esc_html( number_format(intval($budget['spent']) )); ?></td>
+                    <td class="psp-budget-table-remaining"><?php echo esc_html_e( '$', 'psp_projects' ); ?><?php echo esc_html( number_format(intval($budget['remaining']) )); ?>
                 </tr>
             </tbody>
         </table>

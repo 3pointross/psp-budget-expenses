@@ -71,9 +71,9 @@ if( !isset($budget) ): ?>
         </thead>
         <tbody>
             <tr>
-                <td>$<?php echo esc_html( number_format( intval($budget['allocated'] )) ); ?></td>
-                <td>$<?php echo esc_html( number_format( intval($budget['spent'] )) ); ?></td>
-                <td>$<?php echo esc_html( number_format( intval($budget['expense-remaining'] )) ); ?></td>
+                <td><?php echo esc_html_e( '$', 'psp_projects' ); ?><?php echo esc_html( number_format( intval($budget['allocated'] )) ); ?></td>
+                <td><?php echo esc_html_e( '$', 'psp_projects' ); ?><?php echo esc_html( number_format( intval($budget['spent'] )) ); ?></td>
+                <td><?php echo esc_html_e( '$', 'psp_projects' ); ?><?php echo esc_html( number_format( intval($budget['expense-remaining'] )) ); ?></td>
             </tr>
         </tbody>
     </table>
