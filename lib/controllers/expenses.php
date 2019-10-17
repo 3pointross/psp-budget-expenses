@@ -379,10 +379,12 @@ function psp_budget_set_permissions() {
 
         $role = get_role( $role_slug );
 
-        $role->add_cap('read_psp_budgets');
-        $role->add_cap('edit_psp_budgets');
-        $role->add_cap('read_psp_expenses');
-        $role->add_cap('edit_psp_expenses');
+        if( $role ) {
+            $role->add_cap('read_psp_budgets');
+            $role->add_cap('edit_psp_budgets');
+            $role->add_cap('read_psp_expenses');
+            $role->add_cap('edit_psp_expenses');
+        }
 
     }
 
