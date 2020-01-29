@@ -1,4 +1,15 @@
 <?php
+
+add_action( 'psp_head', 'psp_budget_currency_symbol' );
+function psp_budget_currency_symbol() { ?>
+
+    <script>
+        var psp_currency_symbol = '<?php echo get_option( 'psp-expense-currency', '$' ); ?>';
+    </script>
+    <?php
+}
+
+
 add_action( 'admin_enqueue_scripts', 'psp_expenses_admin_scripts' );
 function psp_expenses_admin_scripts() {
 

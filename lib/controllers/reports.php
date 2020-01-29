@@ -28,6 +28,8 @@ add_action( 'manage_psp_expenses_posts_custom_column', 'psp_expenses_header_cont
 function psp_expenses_header_content( $column_name, $post_id ) {
 
     $project_id = get_post_meta( $post_id, '_psp-expense-project', true );
+    $symbol = get_option( 'psp-expense-currency', '$' );
+
 
     if( $column_name == 'project' ) {
         echo '<a href="' . esc_url(get_the_permalink($project_id)) . '">' . esc_html( get_the_title($project_id) ) . '</a>';
@@ -50,7 +52,7 @@ function psp_expenses_header_content( $column_name, $post_id ) {
     }
 
     if( $column_name == 'cost' ) {
-        echo '$' . esc_html( number_format(get_post_meta( $post_id, '_psp-expense-cost', true )) );
+        echo $symbol . esc_html( number_format(get_post_meta( $post_id, '_psp-expense-cost', true )) );
     }
 
 }

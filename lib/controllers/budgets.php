@@ -115,15 +115,18 @@ function psp_update_budget_fe() {
 
     $post_id = $_POST['post_id'];
     $budget  = intval($_POST['budget']);
+    $symbol  = get_option( 'psp-expense-currency', '$' );
 
     update_field( 'pspb_project_budget', $budget, $post_id );
+
+
 
     $updated_figures = pspb_get_project_budget( $post_id );
 
     wp_send_json_success( array('success' => true,
         'markup' => array(
-            'budget'    =>  '$' . esc_html( number_format(intval($updated_figures['total']) ) ),
-            'remaining' =>  '$' . esc_html( number_format(intval($updated_figures['remaining']) ) ),
+            'budget'    =>  $symbol . esc_html( number_format(intval($updated_figures['total']) ) ),
+            'remaining' =>  $symbol . esc_html( number_format(intval($updated_figures['remaining']) ) ),
         ),
         'percent'   =>  $updated_figures['percent']
     ) );

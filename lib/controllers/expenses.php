@@ -65,6 +65,8 @@ function psp_add_expense_fe() {
 
     ob_start();
 
+    $symbol = get_option( 'psp-expense-currency', '$' );
+
     $data = array(
         'postid'       =>  $post_id,
         'date'         =>  get_the_date('m/d/Y', $post_id),
@@ -87,7 +89,7 @@ function psp_add_expense_fe() {
 
             echo esc_html($string); ?>
         </td>
-        <td class="psp-expense-cost-td">$<?php echo esc_html(number_format($data['cost'])); ?></td>
+        <td class="psp-expense-cost-td"><?php echo esc_html( $symbol . number_format($data['cost'])); ?></td>
         <td class="psp-expense-actions-td">
             <?php if( current_user_can( 'edit_psp_project_expenses' ) ): ?>
                 <a href="#" class="psp-expense-edit"><i class="fa fa-pencil"></i> <?php esc_html_e( 'Edit', 'psp_projects' ); ?></a>

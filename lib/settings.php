@@ -50,6 +50,19 @@ function psp_expenses_submenu_page() { ?>
                 <div id="post-body">
                     <div id="post-body-content">
 
+                        <table class="form-table">
+                            <tbody>
+                                <tr class="psp-expense-option currency">
+                                    <th scope="row">
+                                        <label for="psp-expense-currency"><?php esc_html_e( 'Currency Symbol', 'psp_projects' ); ?></label>
+                                    </th>
+                                    <td>
+                                        <input type="text" name="psp-expense-currency" value="<?php echo esc_attr( get_option('psp-expense-currency', '$' ) ); ?>">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
                         <h3><?php esc_html_e( 'Expense Categories', 'psp_projects' ); ?></h3>
 
                         <table class="widefat wp-list-table psp-expense-option-table">
@@ -139,16 +152,22 @@ function psp_budget_settings( $settings ) {
 
     $psp_budget_settings['psp_budget_settings'] = array(
             'psp_budget_license_key' => array(
-            'id'    => 'psp_budget_license_key',
-            'name'  => __( 'License Key', 'psp-front-edit' ),
-            'desc'  => __( 'Enter your license key, save and then activate.', 'psp-front-edit' ),
-            'type'  => 'text',
-        ),
-        'psp_budget_activate_license' => array(
-            'id'    =>  'psp_budget_activate_license',
-            'name'  =>  __( 'Activate License', 'psp-front-edit' ),
-            'type'  =>  'fe_license_key'
-        ),
+                'id'    => 'psp_budget_license_key',
+                'name'  => __( 'License Key', 'psp-front-edit' ),
+                'desc'  => __( 'Enter your license key, save and then activate.', 'psp-front-edit' ),
+                'type'  => 'text',
+            ),
+            'psp_budget_activate_license' => array(
+                'id'    =>  'psp_budget_activate_license',
+                'name'  =>  __( 'Activate License', 'psp-front-edit' ),
+                'type'  =>  'fe_license_key'
+            ),
+            'psp_currency_symbol' => array(
+                'id'    => 'psp_currency_symbol',
+                'name'  => __( 'Currency Symbol', 'psp-front-edit' ),
+                'type'  => 'text',
+                'default'   =>  '$',
+            ),
     );
 
     return array_merge( $settings, $psp_budget_settings );
@@ -179,6 +198,10 @@ function psp_expenses_addon_head() {
 
 function psp_expenses_save_data() {
 
+    if( isset($_POST['psp-expense-currency']) ) {
+        update_option( 'psp-expense-currency', strval( $_POST['psp-expense-currency']) );
+    }
+
     // Load Fields from POST
     if ( !isset($_POST['psp-expense-option-name'])  && !isset($_POST[ 'psp-expense-new-option-name' ]) ) {
         return false;
@@ -202,7 +225,7 @@ function psp_expenses_save_data() {
     }
 
     if( is_array($new_names) ) {
-        foreach( $new_names as $key => $val ) wp_insert_term( $val, 'psp_expenses', $args = array( 'slug' => sanitize_title_with_dashes( $new_slugs[ $key ] ) ) );
+        foreach( $new_names as $key => $val ) wp_insert_term( $val, 'psp_expenses', $args = array( 'slug' => sanitize_title_with_dashes( $new_names[ $key ] ) ) );
     }
 
     if( is_array($delete) ) {

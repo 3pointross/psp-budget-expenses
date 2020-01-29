@@ -1,6 +1,8 @@
 <?php
 global $post;
 
+$symbol = get_option( 'psp-expense-currency', '$' );
+
 $data = array(
     'postid'       =>  $post->ID,
     'date'         =>  get_the_date('m/d/Y'),
@@ -30,7 +32,7 @@ $cost += intval($data['cost']); ?>
 
         } ?>
     </td>
-    <td class="psp-expense-cost-td"><?php echo esc_html_e( '$', 'psp_projects' ); ?><?php echo esc_html(number_format(intval($data['cost']))); ?></td>
+    <td class="psp-expense-cost-td"><?php echo esc_html( $symbol ); ?><?php echo esc_html(number_format(intval($data['cost']))); ?></td>
     <td class="psp-expense-actions">
         <?php if( current_user_can('edit_psp_expenses') ): ?>
             <a href="#" class="js-psp-edit-expense"><i class="fa fa-pencil"></i></a>

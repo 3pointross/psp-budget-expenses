@@ -105,7 +105,7 @@ jQuery(document).ready(function($) {
 
                 var edit_row = $('.psp-expense-table tr.psp-editing' );
                 $(edit_row).find( '.psp-expense-date-td' ).html( formData.date );
-                $(edit_row).find( '.psp-expense-cost-td' ).html( '$' + formData.cost );
+                $(edit_row).find( '.psp-expense-cost-td' ).html( psp_currency_symbol + formData.cost );
                 $(edit_row).find( '.psp-expense-description-td' ).html( formData.desc );
                 $(edit_row).find( '.psp-expense-categories' ).html( response.categories );
                 $(edit_row).data( 'cost', formData.cost );
@@ -284,15 +284,15 @@ jQuery(document).ready(function($) {
             }
         });
 
-        $('.psp-date-table-total-cost').html( '$' + cost.toLocaleString() );
+        $('.psp-date-table-total-cost').html( psp_currency_symbol + cost.toLocaleString() );
 
         var remaining = budget - cost;
 
-        $('.pspb-project-remaining').html( '$' + remaining.toLocaleString());
+        $('.pspb-project-remaining').html( psp_currency_symbol + remaining.toLocaleString());
 
         if( $('.psp-budget-table').length ) {
-            $('.psp-budget-table-spent').html( '$' + cost.toLocaleString() );
-            $('.psp-budget-table-remaining').html( '$' + remaining.toLocaleString());
+            $('.psp-budget-table-spent').html( psp_currency_symbol + cost.toLocaleString() );
+            $('.psp-budget-table-remaining').html( psp_currency_symbol + remaining.toLocaleString());
         }
 
         if( $('.psp-budget-bar').length ) {

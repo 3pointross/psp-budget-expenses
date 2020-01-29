@@ -78,6 +78,7 @@ function psp_expenses_edit_post_metabox_callback() {
 	$project_id 		= get_the_ID();
 
     $cost    		= 0;
+	$symbol = get_option( 'psp-expense-currency', '$' );
 	$expenses       = new WP_Query( $args ); ?>
 
 	<table class="widefat wp-list-table psp-expense-table psp-expense-listing">
@@ -123,7 +124,7 @@ function psp_expenses_edit_post_metabox_callback() {
 
 						} ?>
                     </td>
-					<td class="psp-expense-cost-td">$<?php echo esc_html( number_format(intval($data['cost'])) ); ?></td>
+					<td class="psp-expense-cost-td"><?php echo esc_html( $symbol . number_format(intval($data['cost'])) ); ?></td>
 					<td class="psp-expense-actions-td">
 						<?php if( current_user_can( 'edit_psp_project_expenses' ) ): ?>
 							<a href="#" class="psp-expense-edit"><i class="fa fa-pencil"></i> <?php esc_html_e( 'Edit', 'psp_projects' ); ?></a>
@@ -181,15 +182,15 @@ function psp_expenses_edit_post_metabox_callback() {
 		<tfoot>
 			<tr>
 				<th colspan="3"><?php esc_html_e( 'Budget', 'psp_projects' ); ?></th>
-				<td colspan="2">$<span class="pspb-project-budget" data-budget="<?php the_field('pspb_project_budget',$project_id); ?>"><?php echo number_format(intval(get_field( 'pspb_project_budget', $project_id ))); ?></span></td>
+				<td colspan="2"><?php echo esc_html($symbol); ?><span class="pspb-project-budget" data-budget="<?php the_field('pspb_project_budget',$project_id); ?>"><?php echo number_format(intval(get_field( 'pspb_project_budget', $project_id ))); ?></span></td>
 			</tr>
 			<tr>
 				<th colspan="3"><?php esc_html_e( 'Expenses', 'psp_projects' ); ?></th>
-				<td colspan="2" class="psp-date-table-total-cost">$<?php echo esc_html( number_format(intval($cost)) ); ?></td>
+				<td colspan="2" class="psp-date-table-total-cost"><?php echo esc_html($symbol); ?><?php echo esc_html( number_format(intval($cost)) ); ?></td>
 			</tr>
 			<tr>
 				<th colspan="3"><?php esc_html_e( 'Remaining', 'psp_projects' ); ?></th>
-				<td colspan="2" class="psp-date-table-remaining">$<span class="pspb-project-remaining"><?php echo number_format(intval(get_field('pspb_project_budget', $project_id)) - $cost); ?></span></td>
+				<td colspan="2" class="psp-date-table-remaining"><?php echo esc_html($symbol); ?><span class="pspb-project-remaining"><?php echo number_format(intval(get_field('pspb_project_budget', $project_id)) - $cost); ?></span></td>
 			</tr>
 		</tfoot>
 	</table>
