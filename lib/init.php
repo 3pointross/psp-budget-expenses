@@ -1,6 +1,6 @@
 <?php
 $deps = array(
-    'settings',
+    'budget-settings',
     'assets',
     'views/logic',
     'views/widgets',
