@@ -268,7 +268,7 @@ function psp_expenses_edit_post_metabox_callback() {
                                 if( $field['type'] == 'taxonomy' ):
                                     if(!empty($field['value'])):
                                         foreach( $field['value'] as $cat ): ?>
-                                            <label for="tax-<?php echo esc_attr($cat->term_id); ?>"><input type="checkbox" id="tax-<?php echo esc_attr($cat->term_id); ?>" class="psp-expense-category" name="psp-expense-categories" value="<?php echo esc_attr($cat->slug); ?>"><?php echo esc_html($cat->name); ?></label><br>
+                                            <label for="tax-<?php echo esc_attr($cat->term_id); ?>"><input type="checkbox" id="tax-<?php echo esc_attr($cat->term_id); ?>" class="psp-expense-category" name="psp-expense-categories" value="<?php echo esc_attr($cat->slug); ?>"><?php echo esc_html($cat->name); ?></label>
                                         <?php
                                         endforeach;
 									else:

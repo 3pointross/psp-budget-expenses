@@ -25,6 +25,10 @@ Track project budget and expenses by category in Project Panorama.
 
 == Changelog ==
 
+= 1.5.1 =
+* Support for Panorama 2.0
+* Fixed issue where you could edit or delete expenses after adding
+
 = 1.1 =
 * Added setting for currency symbol
 

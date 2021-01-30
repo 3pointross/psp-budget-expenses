@@ -1,3 +1,9 @@
+.psp-frontend-budget {
+     &__content {
+          padding: 15px 0;
+     }
+}
+
 .psp-hide,
 .psp-expense-hide {
     display: none;
@@ -127,7 +133,7 @@ body.post-type-psp_expenses .tablenav .actions {
         margin: 0 0 30px 0;
     }
     .psp-budget-bar {
-        margin: 0 0 5px 0;
+        margin: 5px 0 0;
         .psp-1 b,
         .psp-2 b,
         .psp-3 b,
@@ -232,6 +238,7 @@ body.post-type-psp_expenses .tablenav .actions {
     }
     &.psp-dashboard-page {
         .psp-budget-bar {
+             margin-top: 0;
             margin-bottom: 1px;
         }
     }

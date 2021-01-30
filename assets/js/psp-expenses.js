@@ -120,9 +120,9 @@ jQuery(document).ready(function($) {
 
     });
 
-    $('.psp-expense-edit').click(function(e) {
+    $(document).on('click', '.psp-expense-edit', function(e) {
 
-        e.preventDefault();
+         e.preventDefault();
 
         if( $('.psp-expense-table tr.psp-editing').length ) {
             psp_expense_table_reset();
@@ -161,44 +161,43 @@ jQuery(document).ready(function($) {
 
     });
 
-    $('.psp-expense-delete').click(function(e) {
+    $(document).on( 'click', '.psp-expense-delete', function(e) {
+         e.preventDefault();
 
-        e.preventDefault();
-
-        if( typeof psp_budget_trans === 'undefined' ) {
+         if( typeof psp_budget_trans === 'undefined' ) {
             confirmation_msg = psp_delete_exp_confirmation_message;
-        } else {
+         } else {
             confirmation_msg = psp_budget_trans.psp_delete_confirmation_message;
-        }
+         }
 
-        var response = confirm( confirmation_msg );
+         var response = confirm( confirmation_msg );
 
-        if( response == false ) {
+         if( response == false ) {
             return false;
-        }
+         }
 
-        var parent      = $(this).parents('tr');
-        var expense_id  = $(this).parents('tr').data('postid');
-        var nonce       = $(this).data('nonce');
-        var project_id  = $('#psp-project-expense-id').val();
+         var parent      = $(this).parents('tr');
+         var expense_id  = $(this).parents('tr').data('postid');
+         var nonce       = $(this).data('nonce');
+         var project_id  = $('#psp-project-expense-id').val();
 
-        $.ajax({
+         $.ajax({
             url : ajaxurl + '?action=psp_delete_expense_fe',
             type: 'post',
             data: {
-                project_id      : project_id,
-                expense_id      : expense_id,
-                nonce           : nonce
+                 project_id      : project_id,
+                 expense_id      : expense_id,
+                 nonce           : nonce
             },
             success: function( response ) {
 
-                $(parent).fadeOut( 'slow' ).remove();
-                psp_recaculate_expense();
+                 $(parent).fadeOut( 'slow' ).remove();
+                 psp_recaculate_expense();
 
             }
-        });
-
+         });
     });
+
 
     $('.psp-expense-submit').click(function(e) {
 

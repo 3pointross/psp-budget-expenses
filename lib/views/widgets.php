@@ -32,7 +32,7 @@ function pspb_project_expense_report() {
 }
 
 add_action( 'psp_archive_project_listing_before_timing', 'pspb_budget_progress_bar' );
-add_action( 'psp_between_short_progress_and_overview_timing', 'pspb_budget_progress_bar' );
+add_action( 'psp_timing_before_timebar', 'pspb_budget_progress_bar' );
 function pspb_budget_progress_bar() {
 
     if( current_user_can('read_psp_expenses') ) {
