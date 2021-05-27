@@ -116,6 +116,75 @@ body.post-type-psp_expenses .tablenav .actions {
 /** Front End **/
 
 #psp-projects {
+     .psp-budget-progress {
+          background: #f1f1f1;
+          margin: 0 !important;
+          height: 25px;
+          text-align: left;
+          padding: 0 !important;
+          border: 0 !important;
+          position: relative;
+          line-height: 25px;
+          span {
+               display: inline-block;
+               height: 25px;
+               background: #3299BB;
+               text-align: right;
+               line-height: 25px;
+               padding: 0 8px 0 0;
+               color: #fff;
+               font-size: 18px;
+               font-weight: normal;
+               transition: all 0.5s ease;
+               position: relative;
+               z-index: 2;
+               b {
+                    line-height: 25px;
+                    padding: 0 8px 0 0;
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: normal;
+                    vertical-align: top;
+                    color: rgba(255,255,255,0.9);
+               }
+          }
+          i {
+               font-size: 11px;
+               text-transform: uppercase;
+               font-weight: bold;
+               letter-spacing: 2px;
+               color: rgba(0,0,0,0.35);
+               position: absolute;
+               right: 5px;
+               z-index: 1;
+               top: -3px;
+          }
+     }
+     .psp-archive-project {
+          .psp-budget-progress {
+               height: 20px;
+               background: #dfdfdf;
+               margin-bottom: 1px !important;
+               span {
+                    height: 20px;
+                    i {
+                         font-size: 11px;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                        color: rgba(0,0,0,0.35);
+                        position: absolute;
+                        right: 5px;
+                        z-index: 1;
+                        top: -3px;
+                    }
+                    b {
+                         line-height: 20px;
+                         font-size: 14px;
+                    }
+               }
+          }
+     }
     .pspb-budget-overview-widget {
         p.psp-progress {
             background: #fff;

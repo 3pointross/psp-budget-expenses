@@ -35,7 +35,7 @@ jQuery(document).ready(function($) {
                 $(parent).find('.psp-budget-table_value').html( response.data.markup.budget );
                 $(parent).find('.psp-budget-table-remaining').html( response.data.markup.remaining );
 
-                $('.psp-budget-bar .psp-progress span').removeClass().addClass( 'psp-' + response.data.percent ).find('b').html( '%' + response.data.percent );
+                $('.psp-budget-bar .psp-budget-progress span').removeClass().addClass( 'psp-' + response.data.percent ).find('b').html( '%' + response.data.percent );
 
                 $(parent).find('.psp-budget-table_value').show();
                 $(parent).find('.psp-js-set-budget').show();

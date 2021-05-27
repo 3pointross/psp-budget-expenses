@@ -131,29 +131,104 @@ body.post-type-psp_expenses .tablenav .actions {
 }
 
 /** Front End **/
-/* line 120, ../sass/psp-budget.scss */
+/* line 119, ../sass/psp-budget.scss */
+#psp-projects .psp-budget-progress {
+  background: #f1f1f1;
+  margin: 0 !important;
+  height: 25px;
+  text-align: left;
+  padding: 0 !important;
+  border: 0 !important;
+  position: relative;
+  line-height: 25px;
+}
+/* line 128, ../sass/psp-budget.scss */
+#psp-projects .psp-budget-progress span {
+  display: inline-block;
+  height: 25px;
+  background: #3299BB;
+  text-align: right;
+  line-height: 25px;
+  padding: 0 8px 0 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: normal;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 2;
+}
+/* line 141, ../sass/psp-budget.scss */
+#psp-projects .psp-budget-progress span b {
+  line-height: 25px;
+  padding: 0 8px 0 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  vertical-align: top;
+  color: rgba(255, 255, 255, 0.9);
+}
+/* line 151, ../sass/psp-budget.scss */
+#psp-projects .psp-budget-progress i {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.35);
+  position: absolute;
+  right: 5px;
+  z-index: 1;
+  top: -3px;
+}
+/* line 164, ../sass/psp-budget.scss */
+#psp-projects .psp-archive-project .psp-budget-progress {
+  height: 20px;
+  background: #dfdfdf;
+  margin-bottom: 1px !important;
+}
+/* line 168, ../sass/psp-budget.scss */
+#psp-projects .psp-archive-project .psp-budget-progress span {
+  height: 20px;
+}
+/* line 170, ../sass/psp-budget.scss */
+#psp-projects .psp-archive-project .psp-budget-progress span i {
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.35);
+  position: absolute;
+  right: 5px;
+  z-index: 1;
+  top: -3px;
+}
+/* line 181, ../sass/psp-budget.scss */
+#psp-projects .psp-archive-project .psp-budget-progress span b {
+  line-height: 20px;
+  font-size: 14px;
+}
+/* line 189, ../sass/psp-budget.scss */
 #psp-projects .pspb-budget-overview-widget p.psp-progress {
   background: #fff;
 }
-/* line 122, ../sass/psp-budget.scss */
+/* line 191, ../sass/psp-budget.scss */
 #psp-projects .pspb-budget-overview-widget p.psp-progress b {
   font-size: 12px;
 }
-/* line 126, ../sass/psp-budget.scss */
+/* line 195, ../sass/psp-budget.scss */
 #psp-projects .pspb-budget-overview-widget table.psp-table td {
   background: #fff;
   border-right: 1px solid #efefef;
 }
-/* line 131, ../sass/psp-budget.scss */
+/* line 200, ../sass/psp-budget.scss */
 #psp-projects .psp-expense-table,
 #psp-projects .pspb-budget-widget {
   margin: 0 0 30px 0;
 }
-/* line 135, ../sass/psp-budget.scss */
+/* line 204, ../sass/psp-budget.scss */
 #psp-projects .psp-budget-bar {
   margin: 5px 0 0;
 }
-/* line 137, ../sass/psp-budget.scss */
+/* line 206, ../sass/psp-budget.scss */
 #psp-projects .psp-budget-bar .psp-1 b,
 #psp-projects .psp-budget-bar .psp-2 b,
 #psp-projects .psp-budget-bar .psp-3 b,
@@ -166,66 +241,66 @@ body.post-type-psp_expenses .tablenav .actions {
 #psp-projects .psp-budget-bar .psp-10 b {
   display: none;
 }
-/* line 149, ../sass/psp-budget.scss */
+/* line 218, ../sass/psp-budget.scss */
 #psp-projects .psp-budget-bar .psp-progress {
   background: #f1f1f1;
 }
-/* line 151, ../sass/psp-budget.scss */
+/* line 220, ../sass/psp-budget.scss */
 #psp-projects .psp-budget-bar .psp-progress span {
   background: #4ecdc4;
 }
-/* line 156, ../sass/psp-budget.scss */
+/* line 225, ../sass/psp-budget.scss */
 #psp-projects #psp-budgeting {
   clear: both;
 }
-/* line 159, ../sass/psp-budget.scss */
+/* line 228, ../sass/psp-budget.scss */
 #psp-projects .psp-budget-table {
   margin-bottom: 20px;
 }
-/* line 161, ../sass/psp-budget.scss */
+/* line 230, ../sass/psp-budget.scss */
 #psp-projects .psp-budget-table td {
   padding: 20px;
 }
-/* line 166, ../sass/psp-budget.scss */
+/* line 235, ../sass/psp-budget.scss */
 #psp-projects .psp-expense-table th, #psp-projects .psp-expense-table td {
   padding: 15px !important;
 }
-/* line 168, ../sass/psp-budget.scss */
+/* line 237, ../sass/psp-budget.scss */
 #psp-projects .psp-expense-table th:first-child, #psp-projects .psp-expense-table td:first-child {
   max-width: 100px;
 }
-/* line 171, ../sass/psp-budget.scss */
+/* line 240, ../sass/psp-budget.scss */
 #psp-projects .psp-expense-table th input, #psp-projects .psp-expense-table td input {
   max-width: 100%;
   font-size: 12px;
 }
-/* line 176, ../sass/psp-budget.scss */
+/* line 245, ../sass/psp-budget.scss */
 #psp-projects .psp-expense-table .psp-expense-table {
   background: #fff;
 }
-/* line 178, ../sass/psp-budget.scss */
+/* line 247, ../sass/psp-budget.scss */
 #psp-projects .psp-expense-table .psp-expense-table td, #psp-projects .psp-expense-table .psp-expense-table th {
   background: #777;
   color: #fff;
   padding: 5px;
 }
-/* line 185, ../sass/psp-budget.scss */
+/* line 254, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list {
   background: #fff;
 }
-/* line 187, ../sass/psp-budget.scss */
+/* line 256, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list table {
   width: 100%;
   border-collapse: collapse;
   border: 15px solid #fff;
   border-top: 0;
 }
-/* line 192, ../sass/psp-budget.scss */
+/* line 261, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list table td, #psp-projects #psp-expense-list table th {
   padding: 10px;
   font-size: 12px;
 }
-/* line 196, ../sass/psp-budget.scss */
+/* line 265, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list table th {
   color: #666;
   text-align: left;
@@ -234,12 +309,12 @@ body.post-type-psp_expenses .tablenav .actions {
   border-bottom: 2px solid #333;
   background: #fff;
 }
-/* line 204, ../sass/psp-budget.scss */
+/* line 273, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list table td {
   background: #fff;
   border-bottom: 1px solid #ddd;
 }
-/* line 209, ../sass/psp-budget.scss */
+/* line 278, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list table tfoot td,
 #psp-projects #psp-expense-list table tfoot th {
   color: #333;
@@ -248,36 +323,36 @@ body.post-type-psp_expenses .tablenav .actions {
   color: #333;
   font-weight: bold;
 }
-/* line 217, ../sass/psp-budget.scss */
+/* line 286, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list table tfoot th {
   text-align: right;
   background: #fff;
 }
-/* line 223, ../sass/psp-budget.scss */
+/* line 292, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list .psp-expense-actions-td {
   text-align: right;
 }
-/* line 225, ../sass/psp-budget.scss */
+/* line 294, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list .psp-expense-actions-td a {
   padding: 0 5px;
   text-decoration: none;
   color: #777;
   display: inline-block;
 }
-/* line 230, ../sass/psp-budget.scss */
+/* line 299, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list .psp-expense-actions-td a span {
   display: none;
 }
-/* line 233, ../sass/psp-budget.scss */
+/* line 302, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list .psp-expense-actions-td a:hover {
   color: #000;
 }
-/* line 240, ../sass/psp-budget.scss */
+/* line 309, ../sass/psp-budget.scss */
 #psp-projects.psp-dashboard-page .psp-budget-bar {
   margin-top: 0;
   margin-bottom: 1px;
 }
-/* line 246, ../sass/psp-budget.scss */
+/* line 315, ../sass/psp-budget.scss */
 #psp-projects .psp-expense-actions a {
   display: inline-block;
   width: 25px;
@@ -291,20 +366,20 @@ body.post-type-psp_expenses .tablenav .actions {
   border-radius: 50%;
   transition: all ease-in-out 250ms;
 }
-/* line 258, ../sass/psp-budget.scss */
+/* line 327, ../sass/psp-budget.scss */
 #psp-projects .psp-expense-actions a:hover {
   transform: scale(1.1);
   box-shadow: 0 0 0 5px rgba(0, 0, 0, 0.1);
 }
-/* line 263, ../sass/psp-budget.scss */
+/* line 332, ../sass/psp-budget.scss */
 #psp-projects .psp-expense-actions .js-psp-edit-expense a {
   background: #4ecdc4;
 }
-/* line 267, ../sass/psp-budget.scss */
+/* line 336, ../sass/psp-budget.scss */
 #psp-projects .psp-new-expense-cats label {
   display: block;
 }
-/* line 270, ../sass/psp-budget.scss */
+/* line 339, ../sass/psp-budget.scss */
 #psp-projects .psp-new-expense-row input[type='number'] {
   background: #f3f3f3;
   border: 0px !important;
@@ -312,31 +387,31 @@ body.post-type-psp_expenses .tablenav .actions {
   padding: 10px !important;
   font-size: 12px;
 }
-/* line 277, ../sass/psp-budget.scss */
+/* line 346, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list {
   margin-top: -30px;
   padding: 20px;
   background: #f1f2f7;
 }
-/* line 281, ../sass/psp-budget.scss */
+/* line 350, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list table.psp-table {
   background: #fff;
 }
-/* line 283, ../sass/psp-budget.scss */
+/* line 352, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list table.psp-table th {
   padding: 10px !important;
   background: rgba(0, 0, 0, 0.1);
   color: #666 !important;
 }
-/* line 288, ../sass/psp-budget.scss */
+/* line 357, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list table.psp-table td {
   font-size: 12px;
 }
-/* line 291, ../sass/psp-budget.scss */
+/* line 360, ../sass/psp-budget.scss */
 #psp-projects #psp-expense-list table.psp-table tr:nth-child(even) td {
   background: rgba(0, 0, 0, 0.05);
 }
-/* line 297, ../sass/psp-budget.scss */
+/* line 366, ../sass/psp-budget.scss */
 #psp-projects .psp-add-expense-form h3 {
   margin-bottom: 15px;
 }
