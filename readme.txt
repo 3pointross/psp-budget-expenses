@@ -25,8 +25,12 @@ Track project budget and expenses by category in Project Panorama.
 
 == Changelog ==
 
+= 1.5.3 =
+* Adds missing translation POT
+
 = 1.5.2 =
 * Fixes issue where marking task complete moves budget bar
+* Fixes issue where percentage sign is on wrong side of number
 
 = 1.5.1 =
 * Support for Panorama 2.0
