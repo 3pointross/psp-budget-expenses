@@ -3,7 +3,7 @@
  * Plugin Name: Project Panorama - Budget & Expense Tracking
  * Plugin URI: http://www.projectpanorama.com
  * Description: Set a project budget and track expenses against it
- * Version: 1.5.3
+ * Version: 1.5.4
  * Author: SnapOrbital
  * Author URI: http://www.projectpanorama.com/
  * License: GPL2
@@ -13,7 +13,7 @@
 do_action( 'pspb_before_init' );
 
 $defintions = array(
-    'PSPB_VER'  =>  '1.5.3',
+    'PSPB_VER'  =>  '1.5.4',
     'PSPB_PATH' =>  plugin_dir_path( __FILE__ ),
     'PSPB_URL'  =>  plugin_dir_url( __FILE__ ),
     'PSP_BUDGET_STORE_URL'  =>  'https://www.projectpanorama.com/',
@@ -47,7 +47,7 @@ function pspb_init() {
 
 add_action( 'plugins_loaded', 'psp_budget_localize_init' );
 function psp_budget_localize_init() {
-    load_plugin_textdomain( 'psp-projects', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
+    load_plugin_textdomain( 'psp_projects', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 
 require 'vendor/plugin-update-checker/plugin-update-checker.php';

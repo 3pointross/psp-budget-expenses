@@ -25,6 +25,9 @@ Track project budget and expenses by category in Project Panorama.
 
 == Changelog ==
 
+= 1.5.4 =
+* Fixes incorrect text_domain string
+
 = 1.5.3 =
 * Adds missing translation POT
 
