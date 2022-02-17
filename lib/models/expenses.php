@@ -304,8 +304,10 @@ function psp_expenses_edit_post_metabox_callback() {
 
 	</div>
 
-	<p><a class="button button-primary psp-add-expense" href="#"><?php esc_html_e( 'Add Expense', 'psp_projects' ); ?></a></p>
-
 	<?php
+	if( current_user_can('edit_psp_expenses') ): ?>
+		<p><a class="button button-primary psp-add-expense" href="#"><?php esc_html_e( 'Add Expense', 'psp_projects' ); ?></a></p>
+	<?php
+	endif;
 
 }

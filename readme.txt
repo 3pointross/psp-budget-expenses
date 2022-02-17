@@ -25,6 +25,9 @@ Track project budget and expenses by category in Project Panorama.
 
 == Changelog ==
 
+= 1.5.5 =
+* Conditionaly shows the add expense button based on permission to edit expenses
+
 = 1.5.4 =
 * Fixes incorrect text_domain string
 
