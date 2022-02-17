@@ -364,7 +364,7 @@ function pspb_get_project_expenses( $post_id = null ) {
 add_action( 'init', 'psp_budget_set_permissions' );
 function psp_budget_set_permissions() {
 
-    $psp_budget_perms = get_option( 'psp_budget_perms', false );
+    $psp_budget_perms = get_option( 'psp_set_budget_perms', false );
 
     if( $psp_budget_perms ) {
         return;
