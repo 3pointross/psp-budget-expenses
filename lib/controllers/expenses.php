@@ -53,7 +53,7 @@ function psp_add_expense_fe() {
 
         if( $meta['type'] == 'string' ) $val = sanitize_text_field( $meta['val'] );
 
-        if( $meta['type'] == 'int' ) $val = intval( $meta['val'] );
+        if( $meta['type'] == 'int' ) $val = floatval( $meta['val'] );
 
         if( $meta['type'] == 'taxonomy' ) {
 			wp_set_post_terms( $post_id, $val, 'psp_expenses', false );
@@ -89,7 +89,7 @@ function psp_add_expense_fe() {
 
             echo esc_html($string); ?>
         </td>
-        <td class="psp-expense-cost-td"><?php echo esc_html( $symbol . number_format($data['cost'])); ?></td>
+        <td class="psp-expense-cost-td"><?php echo esc_html( $symbol . number_format($data['cost'], 2) ); ?></td>
         <td class="psp-expense-actions-td">
             <?php if( current_user_can( 'edit_psp_project_expenses' ) ): ?>
                 <a href="#" class="psp-expense-edit"><i class="fa fa-pencil"></i> <?php esc_html_e( 'Edit', 'psp_projects' ); ?></a>
@@ -179,7 +179,7 @@ function psp_update_expense_fe() {
 
             if( $meta['type'] == 'string' ) $val = sanitize_text_field( $meta['val'] );
 
-            if( $meta['type'] == 'int' ) $val = intval( $meta['val'] );
+            if( $meta['type'] == 'int' ) $val = floatval( $meta['val'] );
 
             if( $meta['type'] == 'taxonomy' ) {
 
@@ -217,7 +217,7 @@ function psp_update_expense_fe() {
 
 function pspb_add_expense( $post_id, $cost ) {
 
-    $spent = intval( get_post_meta( $post_id, '_psp_total_spent', true ) ) + $cost;
+    $spent = floatval( get_post_meta( $post_id, '_psp_total_spent', true ) ) + $cost;
 
     update_post_meta( $post_id, '_psp_total_spend', $spent );
 
@@ -227,7 +227,7 @@ function pspb_add_expense( $post_id, $cost ) {
 
 function pspb_remove_expense( $post_id, $cost ) {
 
-    $spent = intval( get_post_meta( $post_id, '_psp_total_spent', true ) ) - $cost;
+    $spent = floatval( get_post_meta( $post_id, '_psp_total_spent', true ) ) - $cost;
 
     update_post_meta( $post_id, '_psp_total_spend', $spent );
 
@@ -237,7 +237,7 @@ function pspb_remove_expense( $post_id, $cost ) {
 
 function pspb_set_total_expenses( $post_id, $expenses ) {
 
-    update_post_meta( $post_id, '_psp_total_spend', intval($expenses) );
+    update_post_meta( $post_id, '_psp_total_spend', floatval($expenses) );
 
     return true;
 
@@ -272,9 +272,9 @@ function pspb_set_recaulcate_project_expenses() {
             $expenses   = get_posts($e_args);
             $total      = 0;
 
-            foreach( $expenses as $expense ) $total += intval( get_post_meta( $expense->ID, '_psp-expense-cost', true ) );
+            foreach( $expenses as $expense ) $total += floatval( get_post_meta( $expense->ID, '_psp-expense-cost', true ) );
 
-            update_post_meta( $post->ID, '_psp_total_spend', intval($total) );
+            update_post_meta( $post->ID, '_psp_total_spend', floatval($total) );
 
         }
 
@@ -287,7 +287,7 @@ function pspb_get_project_budget( $post_id = null ) {
     $post_id = $post_id ? $post_id : get_the_ID();
 
     $budget = array(
-        'total'         =>  intval( get_field( 'pspb_project_budget', $post_id ) ),
+        'total'         =>  floatval( get_field( 'pspb_project_budget', $post_id ) ),
         'spent'         =>  0,
         'percent'       =>  0,
         'remaining'     =>  0,
@@ -316,7 +316,7 @@ function pspb_get_project_budget( $post_id = null ) {
 
         global $post;
 
-        $cost = intval(get_post_meta( $post->ID, '_psp-expense-cost', true ));
+        $cost = floatval(get_post_meta( $post->ID, '_psp-expense-cost', true ));
 
         if( $cost ) {
             $budget['spent'] += $cost;

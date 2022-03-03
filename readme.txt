@@ -25,6 +25,9 @@ Track project budget and expenses by category in Project Panorama.
 
 == Changelog ==
 
+= 1.5.6 =
+* Supports decimal places
+
 = 1.5.5 =
 * Conditionally shows the add expense button based on permission to edit expenses
 * Fixes issue with role capabilities getting reset

@@ -52,7 +52,7 @@ function psp_expenses_header_content( $column_name, $post_id ) {
     }
 
     if( $column_name == 'cost' ) {
-        echo $symbol . esc_html( number_format(get_post_meta( $post_id, '_psp-expense-cost', true )) );
+        echo $symbol . esc_html( number_format( get_post_meta( $post_id, '_psp-expense-cost', true ), 2 ) );
     }
 
 }
@@ -224,13 +224,13 @@ function pspb_total_expenses() {
     $total = 0;
 
     if( $wp_query->have_posts() ): while( $wp_query->have_posts() ): $wp_query->the_post();
-            $total += intval( get_post_meta( get_the_ID(), '_psp-expense-cost', true ) );
+            $total += floatval( get_post_meta( get_the_ID(), '_psp-expense-cost', true ) );
     endwhile; endif; ?>
 
     <table>
         <tr class="pspb-expense-footer">
             <th colspan="4"><strong><?php esc_html_e( 'Total Expenses', 'psp_projects' ); ?></strong></th>
-            <td><strong>$<?php echo esc_html( number_format($total) ); ?></strong></td>
+            <td><strong>$<?php echo esc_html( number_format($total, 2) ); ?></strong></td>
         </tr>
     </table>
 

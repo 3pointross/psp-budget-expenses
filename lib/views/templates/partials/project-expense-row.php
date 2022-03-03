@@ -11,7 +11,7 @@ $data = array(
     'cost'         =>  get_post_meta( $post->ID, '_psp-expense-cost', true )
 );
 
-$cost += intval($data['cost']); ?>
+$cost += floatval($data['cost']); ?>
 
 <tr class="psp-expense-row" <?php foreach( $data as $key => $val ) echo 'data-' . $key . '="' . esc_attr( $val ) . '" '; ?>>
 
@@ -32,7 +32,7 @@ $cost += intval($data['cost']); ?>
 
         } ?>
     </td>
-    <td class="psp-expense-cost-td"><?php echo esc_html( $symbol ); ?><?php echo esc_html(number_format(intval($data['cost']))); ?></td>
+    <td class="psp-expense-cost-td"><?php echo esc_html( $symbol ); ?><?php echo esc_html( number_format( floatval($data['cost']), 2) ); ?></td>
     <td class="psp-expense-actions">
         <?php if( current_user_can('edit_psp_expenses') ): ?>
             <a href="#" class="js-psp-edit-expense"><i class="fa fa-pencil"></i></a>

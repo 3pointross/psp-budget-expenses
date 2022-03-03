@@ -43,9 +43,9 @@ if( !isset($budget) ): ?>
         </thead>
         <tbody>
             <tr>
-                <td>$<?php echo esc_html( number_format( intval($budget['total'] )) ); ?></td>
-                <td>$<?php echo esc_html( number_format( intval($budget['allocated'] )) ); ?></td>
-                <td>$<?php echo esc_html( number_format( intval($budget['remaining'] )) ); ?></td>
+                <td>$<?php echo esc_html( number_format(floatval($budget['total']), 2)); ?></td>
+                <td>$<?php echo esc_html( number_format(floatval($budget['allocated']), 2) ); ?></td>
+                <td>$<?php echo esc_html( number_format(floatval($budget['remaining']), 2) ); ?></td>
             </tr>
         </tbody>
     </table>
@@ -72,9 +72,9 @@ if( !isset($budget) ): ?>
         </thead>
         <tbody>
             <tr>
-                <td><?php echo esc_html( $symbol ); ?><?php echo esc_html( number_format( intval($budget['allocated'] )) ); ?></td>
-                <td><?php echo esc_html( $symbol ); ?><?php echo esc_html( number_format( intval($budget['spent'] )) ); ?></td>
-                <td><?php echo esc_html( $symbol ); ?><?php echo esc_html( number_format( intval($budget['expense-remaining'] )) ); ?></td>
+                <td><?php echo esc_html( $symbol ); ?><?php echo esc_html( number_format(floatval($budget['allocated']), 2) ); ?></td>
+                <td><?php echo esc_html( $symbol ); ?><?php echo esc_html( number_format(floatval($budget['spent']), 2) ); ?></td>
+                <td><?php echo esc_html( $symbol ); ?><?php echo esc_html( number_format(floatval($budget['expense-remaining']), 2) ); ?></td>
             </tr>
         </tbody>
     </table>
@@ -98,9 +98,9 @@ if( !isset($budget) ): ?>
             ?>
             <tr>
                 <td><?php echo esc_html( $expense->name ); ?></td>
-                <td>$<?php echo esc_html( number_format(intval(get_term_meta( $expense->term_id, '_expense-option-budget', true ))) ); ?></td>
-                <td>$<?php echo esc_html( number_format(intval($exp_budget['spent']))); ?></td>
-                <td>$<?php echo esc_html( number_format(intval($exp_budget['remaining']))); ?></td>
+                <td>$<?php echo esc_html( number_format(floatval(get_term_meta($expense->term_id, '_expense-option-budget', true)), 2) ); ?></td>
+                <td>$<?php echo esc_html( number_format(floatval($exp_budget['spent']), 2) ); ?></td>
+                <td>$<?php echo esc_html( number_format(floatval($exp_budget['remaining']), 2) ); ?></td>
             </tr>
         <?php endforeach; ?>
         </tbody>

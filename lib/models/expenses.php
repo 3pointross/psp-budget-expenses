@@ -104,7 +104,7 @@ function psp_expenses_edit_post_metabox_callback() {
 					'cost'         =>  get_post_meta( $post->ID, '_psp-expense-cost', true )
 				);
 
-                $cost += intval($data['cost']); ?>
+                $cost += floatval($data['cost']); ?>
 
 				<tr <?php foreach( $data as $key => $val ) echo 'data-' . $key . '="' . esc_attr( $val ) . '" '; ?>>
 					<td class="psp-expense-date-td"><?php echo esc_html($data['date']); ?></td>
@@ -124,7 +124,7 @@ function psp_expenses_edit_post_metabox_callback() {
 
 						} ?>
                     </td>
-					<td class="psp-expense-cost-td"><?php echo esc_html( $symbol . number_format(intval($data['cost'])) ); ?></td>
+					<td class="psp-expense-cost-td"><?php echo esc_html( $symbol . number_format(floatval($data['cost']), 2) ); ?></td>
 					<td class="psp-expense-actions-td">
 						<?php if( current_user_can( 'edit_psp_project_expenses' ) ): ?>
 							<a href="#" class="psp-expense-edit"><i class="fa fa-pencil"></i> <?php esc_html_e( 'Edit', 'psp_projects' ); ?></a>
@@ -166,7 +166,7 @@ function psp_expenses_edit_post_metabox_callback() {
                     </td>
 					<td>
 						<label for="psp-expense-cost"><?php esc_html_e( 'Cost', 'psp_projects' ); ?></label>
-						<input type="number" name="psp-expense-cost" class="psp-expense-cost" value="">
+						<input type="number" name="psp-expense-cost" class="psp-expense-cost" value="" step="any">
 					</td>
 					<td class="psp-expense-edit-actions-td"><a class="button button-primary psp-expense-update" href="#"><?php esc_html_e( 'Update', 'psp_projects' ); ?></a> <a href="#" class="psp-expense-cancel"><?php esc_html_e( 'Cancel', 'psp_projects' ); ?></td>
 				</tr>
@@ -182,15 +182,15 @@ function psp_expenses_edit_post_metabox_callback() {
 		<tfoot>
 			<tr>
 				<th colspan="3"><?php esc_html_e( 'Budget', 'psp_projects' ); ?></th>
-				<td colspan="2"><?php echo esc_html($symbol); ?><span class="pspb-project-budget" data-budget="<?php the_field('pspb_project_budget',$project_id); ?>"><?php echo number_format(intval(get_field( 'pspb_project_budget', $project_id ))); ?></span></td>
+				<td colspan="2"><?php echo esc_html($symbol); ?><span class="pspb-project-budget" data-budget="<?php the_field('pspb_project_budget',$project_id); ?>"><?php echo number_format(floatval(get_field( 'pspb_project_budget', $project_id )), 2); ?></span></td>
 			</tr>
 			<tr>
 				<th colspan="3"><?php esc_html_e( 'Expenses', 'psp_projects' ); ?></th>
-				<td colspan="2" class="psp-date-table-total-cost"><?php echo esc_html($symbol); ?><?php echo esc_html( number_format(intval($cost)) ); ?></td>
+				<td colspan="2" class="psp-date-table-total-cost"><?php echo esc_html($symbol); ?><?php echo esc_html( number_format(floatval($cost)) ); ?></td>
 			</tr>
 			<tr>
 				<th colspan="3"><?php esc_html_e( 'Remaining', 'psp_projects' ); ?></th>
-				<td colspan="2" class="psp-date-table-remaining"><?php echo esc_html($symbol); ?><span class="pspb-project-remaining"><?php echo number_format(intval(get_field('pspb_project_budget', $project_id)) - $cost); ?></span></td>
+				<td colspan="2" class="psp-date-table-remaining"><?php echo esc_html($symbol); ?><span class="pspb-project-remaining"><?php echo number_format(floatval(get_field('pspb_project_budget', $project_id)) - $cost, 2); ?></span></td>
 			</tr>
 		</tfoot>
 	</table>
