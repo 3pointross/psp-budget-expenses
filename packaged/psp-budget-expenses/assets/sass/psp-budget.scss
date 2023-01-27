@@ -1,0 +1,371 @@
+.psp-frontend-budget {
+     &__content {
+          padding: 15px 0;
+     }
+}
+
+.psp-hide,
+.psp-expense-hide {
+    display: none;
+}
+
+.psp-budget-license-table {
+    input[type='submit'] {
+        display: inline-block;
+        margin: 0 5px;
+    }
+}
+
+.psp-expense-option-table {
+    margin-bottom: 30px;
+}
+
+.psp-add-expense-form {
+    margin: 30px 0;
+}
+
+.psp-add-expense-form th {
+    vertical-align: top;
+}
+
+.psp-editing {
+    display: none;
+}
+
+.psp-expense-table label {
+    font-weight: bold;
+    display: block;
+    color: #333;
+}
+
+.psp-expense-table label.psp-edit-checkbox {
+    font-weight: normal;
+}
+
+.psp-expense-table td {
+    vertical-align: top;
+}
+
+.psp-expense-table textarea,
+.psp-expense-table input[type='text'],
+.psp-expense-table input[type='number'] {
+    width: 100%;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.psp-expense-edit-actions-td {
+    vertical-align: middle !important;
+}
+
+tr.type-psp_expenses .row-actions {
+    display: none;
+}
+
+.psp-expense-table-total-delayed {
+    font-weight: bold !important;
+    text-align: right !important;
+}
+
+.psp-budget-bar .psp-0 b,
+.psp-budget-bar .psp-1 b,
+.psp-budget-bar .psp-2 b,
+.psp-budget-bar .psp-3 b,
+.psp-budget-bar .psp-4 b,
+.psp-budget-bar .psp-5 b,
+.psp-budget-bar .psp-6 b,
+.psp-budget-bar .psp-7 b,
+.psp-budget-bar .psp-8 b,
+.psp-budget-bar .psp-9 b,
+.psp-budget-bar .psp-10 b {
+    display: none;
+}
+
+
+.pspb-budget-widget {
+    margin: 0 0 30px 0;
+}
+
+body.post-type-psp_expenses a.page-title-action,
+body.post-type-psp_expenses .subsubsub {
+    display: none;
+}
+
+body.post-type-psp_expenses .tablenav .actions {
+    overflow: visible;
+}
+
+.SumoSelect {
+    float: left;
+    margin-right: 5px;
+}
+
+.pspb_posts_per_page {
+    float: none !important;
+    display: inline-block;
+}
+
+.SumoSelect .SelectBox {
+    padding: 3px 8px;
+}
+
+.SumoSelect > .CaptionCont {
+    border: 1px solid #ddd;
+}
+
+/** Front End **/
+
+#psp-projects {
+     .psp-budget-progress {
+          background: #f1f1f1;
+          margin: 0 !important;
+          height: 25px;
+          text-align: left;
+          padding: 0 !important;
+          border: 0 !important;
+          position: relative;
+          line-height: 25px;
+          span {
+               display: inline-block;
+               height: 25px;
+               background: #3299BB;
+               text-align: right;
+               line-height: 25px;
+               padding: 0 8px 0 0;
+               color: #fff;
+               font-size: 18px;
+               font-weight: normal;
+               transition: all 0.5s ease;
+               position: relative;
+               z-index: 2;
+               b {
+                    line-height: 25px;
+                    padding: 0 8px 0 0;
+                    color: #fff;
+                    font-size: 14px;
+                    font-weight: normal;
+                    vertical-align: top;
+                    color: rgba(255,255,255,0.9);
+               }
+          }
+          i {
+               font-size: 11px;
+               text-transform: uppercase;
+               font-weight: bold;
+               letter-spacing: 2px;
+               color: rgba(0,0,0,0.35);
+               position: absolute;
+               right: 5px;
+               z-index: 1;
+               top: -3px;
+          }
+     }
+     .psp-archive-project {
+          .psp-budget-progress {
+               height: 20px;
+               background: #dfdfdf;
+               margin-bottom: 1px !important;
+               span {
+                    height: 20px;
+                    i {
+                         font-size: 11px;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                        letter-spacing: 2px;
+                        color: rgba(0,0,0,0.35);
+                        position: absolute;
+                        right: 5px;
+                        z-index: 1;
+                        top: -3px;
+                    }
+                    b {
+                         line-height: 20px;
+                         font-size: 14px;
+                    }
+               }
+          }
+     }
+    .pspb-budget-overview-widget {
+        p.psp-progress {
+            background: #fff;
+            b {
+                font-size: 12px;
+            }
+        }
+        table.psp-table td {
+            background: #fff;
+            border-right: 1px solid #efefef;
+        }
+    }
+    .psp-expense-table,
+    .pspb-budget-widget {
+        margin: 0 0 30px 0;
+    }
+    .psp-budget-bar {
+        margin: 5px 0 0;
+        .psp-1 b,
+        .psp-2 b,
+        .psp-3 b,
+        .psp-4 b,
+        .psp-5 b,
+        .psp-6 b,
+        .psp-7 b,
+        .psp-8 b,
+        .psp-9 b,
+        .psp-10 b {
+            display: none;
+        }
+        .psp-progress {
+            background: #f1f1f1;
+            span {
+                background: #4ecdc4;
+            }
+        }
+    }
+    #psp-budgeting {
+        clear: both;
+    }
+    .psp-budget-table {
+        margin-bottom: 20px;
+        td {
+            padding: 20px;
+        }
+    }
+    .psp-expense-table {
+        th,td {
+            padding: 15px !important;
+            &:first-child {
+                max-width: 100px;
+            }
+            input {
+                max-width: 100%;
+                font-size: 12px;
+            }
+        }
+        .psp-expense-table {
+            background: #fff;
+            td, th {
+                background: #777;
+                color: #fff;
+                padding: 5px;
+            }
+        }
+    }
+    #psp-expense-list {
+        background: #fff;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 15px solid #fff;
+            border-top: 0;
+            td,th {
+                padding: 10px;
+                font-size: 12px;
+            }
+            th {
+                color: #666;
+                text-align: left;
+                text-transform: uppercase;
+                font-weight: bold;
+                border-bottom: 2px solid #333;
+                background: #fff;
+            }
+            td {
+                background: #fff;
+                border-bottom: 1px solid #ddd;
+            }
+            tfoot {
+                td,
+                th {
+                    color: #333;
+                    border-bottom: 2px solid #fff;
+                    background: #fafafa;
+                    color: #333;
+                    font-weight: bold;
+                }
+                th {
+                    text-align: right;
+                    background: #fff;
+                }
+            }
+        }
+        .psp-expense-actions-td {
+            text-align: right;
+            a {
+                padding: 0 5px;
+                text-decoration: none;
+                color: #777;
+                display: inline-block;
+                span {
+                    display: none;
+                }
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
+    }
+    &.psp-dashboard-page {
+        .psp-budget-bar {
+             margin-top: 0;
+            margin-bottom: 1px;
+        }
+    }
+    .psp-expense-actions {
+        a {
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            font-size: 11px;
+            background: #000;
+            text-decoration: none;
+            line-height: 25px;
+            text-align: center;
+            color: #fff;
+            border-radius: 50%;
+            transition: all ease-in-out 250ms;
+            &:hover {
+                transform: scale(1.1);
+                box-shadow: 0 0 0 5px rgba(0,0,0,0.1);
+            }
+        }
+        .js-psp-edit-expense a {
+            background: #4ecdc4;
+        }
+    }
+    .psp-new-expense-cats label {
+        display: block;
+    }
+    .psp-new-expense-row input[type='number'] {
+    	background: #f3f3f3;
+    	border: 0px !important;
+    	color: #333;
+    	padding: 10px !important;
+    	font-size: 12px;
+    }
+    #psp-expense-list {
+        margin-top: -30px;
+        padding: 20px;
+        background: #f1f2f7;
+        table.psp-table {
+            background: #fff;
+            th {
+                padding: 10px !important;
+                background: rgba(0,0,0,0.1);
+                color: #666 !important;
+            }
+            td {
+                font-size: 12px;
+            }
+            tr:nth-child(even) td {
+                background: rgba(0,0,0,0.05);
+            }
+        }
+    }
+    .psp-add-expense-form {
+        h3 {
+            margin-bottom: 15px;
+        }
+    }
+
+}

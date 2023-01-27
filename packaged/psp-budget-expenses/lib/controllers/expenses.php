@@ -301,9 +301,9 @@ function pspb_get_project_budget( $post_id = null ) {
         'post_status'       =>  array( 'publish', 'future' )
     );
 
-    $expenses = get_posts($args); // new WP_Query($args);
+    $expenses = new WP_Query($args);
 
-    if( empty($expenses) ) { // !$expenses->have_posts() ) {
+    if( !$expenses->have_posts() ) {
 
         $budget['spent']    = 0;
         $budget['percent']  = 0;
@@ -312,17 +312,18 @@ function pspb_get_project_budget( $post_id = null ) {
 
     }
 
-    foreach( $expenses as $expense ) {
+    while( $expenses->have_posts() ) { $expenses->the_post();
 
-//     while( $expenses->have_posts() ) { $expenses->the_post();
+        global $post;
 
-        $cost = floatval(get_post_meta( $expense->ID, '_psp-expense-cost', true ));
+        $cost = floatval(get_post_meta( $post->ID, '_psp-expense-cost', true ));
 
         if( $cost ) {
             $budget['spent'] += $cost;
         }
-
     }
+
+    wp_reset_query(); wp_reset_postdata();
 
     $budget['remaining'] = $budget['total'] - $budget['spent'];
 
